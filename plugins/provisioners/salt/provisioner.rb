@@ -156,6 +156,11 @@ module VagrantPlugins
         " pillar='#{@config.pillar_data.to_json}'" if !@config.pillar_data.empty?
       end
 
+      # Get grains string to pass with the salt command
+      def get_grains
+        
+      end
+
       # Get colorization option string to pass with the salt command
       def get_colorize
         @config.colorize ? " --force-color" : " --no-color"

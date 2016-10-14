@@ -109,6 +109,11 @@ module VagrantPlugins
         @pillar_data = Vagrant::Util::DeepMerge.deep_merge(@pillar_data, data)
       end
 
+      def grains(data)
+        @grains_data = {} if @grains_data == UNSET_VALUE
+        @grains_data = Vagrang::Util::DeepMerge.deep_merge(@grains_data, data)
+      end
+
       def validate(machine)
         errors = _detected_errors
         if @minion_config
